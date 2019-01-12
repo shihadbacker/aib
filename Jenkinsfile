@@ -1,5 +1,9 @@
 node(){
 
-stage(){
+stage("prep"){
+}
+  stage("builkd"){
+}
+   stage("publish"){
 }
 }
