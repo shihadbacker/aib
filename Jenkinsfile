@@ -1,15 +1,13 @@
 node('maven-label') {
    def mvnHome
-   stage('Preparation') { // for display purposes
-      // Get some code from a GitHub repository
+   stage('Preparation') { 
+      
       git 'https://github.com/aibdept/aib.git'
-      // Get the Maven tool.
-      // ** NOTE: This 'M3' Maven tool must be configured
-      // **       in the global configuration.           
+           
       mvnHome = tool 'maven'
    }
    stage('Build') {
-      // Run the maven build
+      
       if (isUnix()) {
          sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
       } else {
@@ -17,7 +15,7 @@ node('maven-label') {
       }
    }
    stage('deploy') {
-      // Run the maven build
+      
       if (isUnix()) {
          sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean deploy"
       } else {
