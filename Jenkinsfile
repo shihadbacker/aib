@@ -17,7 +17,7 @@ node('maven-label') {
    stage('deploy') {
       
       if (isUnix()) {
-         sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean deploy"
+         sh "'${mvnHome}/bin/mvn' -Paib-deploy -Dmaven.test.failure.ignore clean deploy"
       } else {
          bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
       }
