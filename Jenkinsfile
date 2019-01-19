@@ -5,14 +5,7 @@ node('maven-label') {
       git 'https://github.com/aibdept/aib.git'     
       mvnHome = tool 'maven'
    }
-   stage('Build') {
-      
-      if (isUnix()) {
-         sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
-      } else {
-         bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
-      }
-   }
+   
    stage('deploy') {
       
       if (isUnix()) {
