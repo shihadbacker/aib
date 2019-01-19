@@ -31,4 +31,25 @@
       <layout>legacy</layout>
     </snapshotRepository>
   </distributionManagement>
+  <profiles>
+<profile>
+     <id>spring-deploy</id>
+ <distributionManagement>
+    <repository>
+      <uniqueVersion>false</uniqueVersion>
+      <id>aib-releases</id>
+      <name>aib-releases</name>
+      <url>http://ip-172-31-91-182.ec2.internal:8081/nexus/content/repositories/aib-releases/</url>
+      <layout>default</layout>
+    </repository>
+    <snapshotRepository>
+      <uniqueVersion>true</uniqueVersion>
+      <id>aib-snapshots</id>
+      <name>aib-snapshots</name>
+      <url>http://ip-172-31-91-182.ec2.internal:8081/nexus/content/repositories/aib-snapshots/</url>
+      <layout>legacy</layout>
+    </snapshotRepository>
+  </distributionManagement>
+</profile>
+</profiles>
 </project>
