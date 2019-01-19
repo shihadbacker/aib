@@ -33,7 +33,7 @@
   </distributionManagement>
   <profiles>
 <profile>
-     <id>spring-deploy</id>
+     <id>aib-deploy</id>
  <distributionManagement>
     <repository>
       <uniqueVersion>false</uniqueVersion>
